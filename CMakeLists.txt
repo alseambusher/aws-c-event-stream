@@ -12,7 +12,8 @@
 # permissions and limitations under the License.
 cmake_minimum_required (VERSION 3.1)
 project (aws-c-event-stream C)
-
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -stdlib=libc++ -Wno-return-type-c-linkage -Wno-unneeded-internal-declaration")
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++14 -fno-strict-aliasing")
 if (UNIX AND NOT APPLE)
     include(GNUInstallDirs)
 elseif(NOT DEFINED CMAKE_INSTALL_LIBDIR)
